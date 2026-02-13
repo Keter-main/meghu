@@ -112,8 +112,8 @@ yesBtn.addEventListener('click', () => {
 
     // Change Content
     questionContainer.innerHTML = `
-        <h1 class="big-question">Yay! I Love You! 💖</h1>
-        <p>You've made me the happiest person ever.</p>
+        <h1 class="big-question">Yayyyyyy! I Love You! 💖</h1>
+        <p>Duniya kaa sabsee kushi aadmi bana diya tune muzeeeeeee</p>
         <div style="font-size: 4rem; margin-top: 1rem;">💑</div>
     `;
 });
