@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mere Meghurani</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Outfit:wght@300;400;600&family=Sacramento&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Music -->
+    <!-- Replace '15' with your desired start time in seconds -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Background -->
+    <div id="hearts-container"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content fade-in">
+            <div class="hero-image-container">
+                <img src="assets/hero.jpeg" alt="Us" class="main-photo"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="image-placeholder main-photo" style="display:none">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <h1 class="script-font">Maalkin jeee</h1>
+            <h2 class="name-highlight">Thodu sa website bana diyaa</h2>
+            <p class="subtitle">mere piyari se bacchi ke liyeee </p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Open When Envelopes Section -->
+    <section id="envelopes" class="section-padding">
+        <h2 class="section-title fade-on-scroll">Open When...</h2>
+        <p class="section-subtitle fade-on-scroll">Tap to open</p>
+
+        <div class="envelope-grid">
+            <!-- Envelope 1 -->
+            <div class="envelope-wrapper fade-on-scroll" onclick="openEnvelope(this)">
+                <div class="envelope">
+                    <div class="front">
+                        <div class="text">You miss me</div>
+                        <i class="fas fa-heart seal"></i>
+                    </div>
+                    <div class="letter">
+                        <p>Jab bhi miss karegi meko ek call laga denaaa, i am always tere for youuuuu ❤️</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Envelope 2 -->
+            <div class="envelope-wrapper fade-on-scroll delay-100" onclick="openEnvelope(this)">
+                <div class="envelope">
+                    <div class="front">
+                        <div class="text">You're sad</div>
+                        <i class="fas fa-heart seal"></i>
+                    </div>
+                    <div class="letter">
+                        <p>Imagine tu muze chamat maar rahi ke piyar se aur saaaaab theek lagne lagegaa</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Envelope 3 -->
+            <div class="envelope-wrapper fade-on-scroll delay-200" onclick="openEnvelope(this)">
+                <div class="envelope">
+                    <div class="front">
+                        <div class="text">You need a laugh</div>
+                        <i class="fas fa-heart seal"></i>
+                    </div>
+                    <div class="letter">
+                        <p>Train Late kyu ho gate..? Uska tyre puncher ho gaya thaa 🤣🤣</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons Section (Minimal) -->
+    <section id="reasons" class="section-padding">
+        <h2 class="section-title fade-on-scroll">Why You?</h2>
+        <div class="reasons-list">
+            <div class="reason-item fade-on-scroll">
+                <span class="bullet">❤️</span>
+                <span class="text">Tu mere piyari se bacchi heee</span>
+            </div>
+            <div class="reason-item fade-on-scroll delay-100">
+                <span class="bullet">❤️</span>
+                <span class="text">Tere akho me muze poori duniya dikh jati hee babyy </span>
+            </div>
+            <div class="reason-item fade-on-scroll delay-200">
+                <span class="bullet">❤️</span>
+                <span class="text">You are the best maalkin in the wolrd</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <h2 class="section-title fade-on-scroll">Us</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item fade-on-scroll">
+                <img src="assets/gallery1.jpeg" alt="Memory" onerror="this.style.display='none'">
+            </div>
+            <div class="gallery-item fade-on-scroll">
+                <img src="assets/gallery2.jpeg" alt="Memory" onerror="this.style.display='none'">
+            </div>
+            <div class="gallery-item fade-on-scroll">
+                <img src="assets/gallery3.jpeg" alt="Memory" onerror="this.style.display='none'">
+            </div>
+            <div class="gallery-item fade-on-scroll">
+                <img src="assets/gallery4.jpeg" alt="Memory" onerror="this.style.display='none'">
+            </div>
+        </div>
+    </section>
+
+    <!-- The Question Section -->
+    <section id="ask" class="ask-section">
+        <div class="question-container fade-in">
+            <h1 class="big-question">Will you be my Valentine?</h1>
+            <div class="buttons">
+                <button id="yesBtn" class="btn yes-btn">YES! 💖</button>
+                <button id="noBtn" class="btn no-btn">No</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

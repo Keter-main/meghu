@@ -1,0 +1,457 @@
+/* Global Variables - Baby Pink Theme */
+:root {
+    --bg-pink: #FFF0F5;
+    /* LavenderBlush */
+    --card-bg: #FFFFFF;
+    --primary-text: #5D4037;
+    /* Warm Brown */
+    --accent-pink: #FFB7C5;
+    /* Cherry Blossom Pink */
+    --deep-pink: #FF69B4;
+    /* Hot Pink */
+    --shadow: 0 10px 30px -10px rgba(255, 183, 197, 0.5);
+
+    --font-heading: 'Dancing Script', cursive;
+    --font-body: 'Outfit', sans-serif;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    /* Remove blue highlight on mobile tap */
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-pink);
+    color: var(--primary-text);
+    overflow-x: hidden;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+/* Floating Hearts Background */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    color: var(--accent-pink);
+    opacity: 0.6;
+    animation: floatUp 20s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    90% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Music Control */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: none;
+    /* Hidden as requested */
+    gap: 10px;
+}
+
+.music-btn {
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--deep-pink);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.music-btn:active {
+    transform: scale(0.9);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Typography */
+.script-font {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--deep-pink);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    text-align: center;
+    color: var(--deep-pink);
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    /* Full height for better centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    /* Slightly reduced for mobile */
+    position: relative;
+    width: 100%;
+}
+
+.hero-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 2rem auto;
+    /* Explicit auto margins for centering */
+    padding: 5px;
+    background: white;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+    /* Ensure z-index works if needed */
+}
+
+.main-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--accent-pink);
+    color: white;
+    font-size: 3rem;
+}
+
+.name-highlight {
+    font-size: 2.5rem;
+    color: var(--primary-text);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    color: var(--deep-pink);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Envelopes Section */
+.section-padding {
+    padding: 4rem 1.5rem;
+}
+
+.envelope-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.envelope-wrapper {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.envelope {
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    border: 1px solid rgba(255, 183, 197, 0.3);
+}
+
+.envelope-wrapper.open .envelope {
+    box-shadow: none;
+    border-color: transparent;
+    background: transparent;
+}
+
+.front {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    z-index: 2;
+    position: relative;
+    border-radius: 10px;
+}
+
+.seal {
+    color: var(--deep-pink);
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.text {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.letter {
+    max-height: 0;
+    overflow: hidden;
+    background: #FFF9FB;
+    padding: 0 1.5rem;
+    border-radius: 0 0 10px 10px;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.envelope-wrapper.open .letter {
+    max-height: 200px;
+    /* Adjust based on content */
+    padding: 1.5rem;
+    opacity: 1;
+    border: 1px solid rgba(255, 183, 197, 0.3);
+    margin-top: -10px;
+    /* Pull up to connect */
+    box-shadow: var(--shadow);
+}
+
+.envelope-wrapper.open .front {
+    background: var(--accent-pink);
+    color: white;
+}
+
+.envelope-wrapper.open .seal {
+    color: white;
+    transform: rotate(180deg);
+}
+
+/* Reasons - Minimal List */
+.reasons-list {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.reason-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.reason-item:last-child {
+    margin-bottom: 0;
+}
+
+.bullet {
+    color: var(--deep-pink);
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 columns on mobile */
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    aspect-ratio: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Ask Section */
+.ask-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.big-question {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: var(--deep-pink);
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+    height: 60px;
+}
+
+.btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.yes-btn {
+    background-color: var(--deep-pink);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    z-index: 10;
+}
+
+.yes-btn:active {
+    transform: scale(0.95);
+}
+
+.no-btn {
+    background: white;
+    color: var(--primary-text);
+    border: 1px solid #ddd;
+    /* position: absolute; Removed for static layout */
+}
+
+/* Footer */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2000;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
